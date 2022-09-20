@@ -139,21 +139,56 @@ Authors \\
 Structural analysis is a study of a method of determining each component under conditions in which the structure of a function is known, but the specific function of each component is unknown. In other words, it is a technique of creating an equivalent function having the same function using only the input/output value of a given oracle function. In 2001, Biryukov et al. [6] considered a function of the SASAS structure as an oracle and discovered a way to find an oracle of the same structure with equal functionality. Using this method, you can discover the encryption key hidden inside the SASAS structure. Most of the white-box cryptography using the table reference method can be attacked by this analysis method. The BGE attack [9] can also be interpreted as this analysis method. Baek et al. proposed a toolbox that generalized structural analysis and presented systematic and quantitative attacks on various structures. This structural analysis has expanded its research to various structures such as ASASA and SASASASAS. 
 Typical attacks on white-box cryptography include obtaining encryption keys and attacking one-wayness properties by constructing a decryption algorithm for a given encryption system. White-box cryptography, which combines non-linear and affine functions into tables, is difficult to maintain security through structural analysis. However, various studies are still in progress to design a white-box encryption model based on one-wayness. 
 
-\section{SHI'S WHITE-BOX CRYPTOGRAPHY}
-In 2019, Shi et al. proposed a light-weight white-box encryption scheme
+\section{SHI'S WHITE-BOX Encryption Scheme: LW-WBES}
+In 2019, Shi et al. proposed a white-box encryption scheme
 for light-weight embedded devices including mobile phones and navigating systems. 
-We denote this scheme by LW-WBES.
-In fact, LW-WBES is a block cipher with the following features:
+We denote their scheme by LW-WBES, which means a Light-Weight White-Box Encryption Scheme.
+LW-WBES has the following features:
 \begin{itemize}
-\item 120 bit block size (input/output size)
-\item 16(default), 10(aggressive), or 32(conservative) rounds depending on the security level
-\item variants of Feistel network 
-\item two types of keys: black-box key and white-box key 
+\item The block size (input/output size) is 120 bits. 
+\item The number of rounds depends on the security level such as
+16(default), 10(aggressive), or 32(conservative).
+\item The encryption process is designed as a variant of Feistel network.
+\item Two types of keys (black-box key and white-box key) are used for
+providing black-box security and white-box security simutaneously. 
+Hence, the key size of LW-WBES is extremely large.
 \end{itemize}
 
-The design 
+\subsection{Design rationale}
+In order to overcome the difficulties of white-box implementations
+of standard ciphers, Shi et al. propose a new cipher which seems to be secure 
+against white-box attack context.
+Their design stretergies can be summarized as:
+\begin{itemize}
+\item The scheme has the secret components
+based on the Feistel network, which protect the secret keys from
+white-box attacks including DCA and DFA.
+\item Since components of three different size (4, 5, 6-bit) are integrated,
+it is hard to mount the structural analysis.
+\item The secret components can be reused in each round for saving memory usage
+in light-weight devices.
+\item The scheme does not require external encodings
+and obfuscation techniques. 
+\end{itemize}
+We will show that the goal of design ratinals cannot be satisfied
+and weak against structural cryptanalysis in particular.
 
+\subsection{Specification}
 
+LW-WBES is a 120-bit block cipher and the number of round
+can be chosen based on the level of security and the constraints of resources.
+Here, we describe the encryption process of16 round version.
+120-bit plaintext $PT$ is input $(L,R)$ for the Feistel network divided into
+5-bit variables as:
+\[
+PT = (L,R) = (L_0, L_1, \ldots, L_{11}, R_0, R_1, \ldots, R_{11}),
+\]
+where 
+$L_i, R_i \in GF(2)^5 \text{ for } i=0,1, \ldots, 11$.
+In each round, the round function $F: GF(2)^{60} \to GF(2)^{72}$
+consumes 72-bit black-box round key $rk$.
+
+\subsection{Security Claim}
 
 \begin{itemize}
 \item Design rationale
