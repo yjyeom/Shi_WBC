@@ -156,37 +156,67 @@ Hence, the key size of LW-WBES is extremely large.
 
 \subsection{Design rationale}
 In order to overcome the difficulties of white-box implementations
-of standard ciphers, Shi et al. propose a new cipher which seems to be secure 
+of standard ciphers, Shi et al. propose a new white-box friendly cipher secure 
 against white-box attack context.
-Their design stretergies can be summarized as:
+Their design stretergies can be summarized as follows:
 \begin{itemize}
 \item The scheme has the secret components
-based on the Feistel network, which protect the secret keys from
+based on the Feistel network, which protect the secret white-box keys from
 white-box attacks including DCA and DFA.
 \item Since components of three different size (4, 5, 6-bit) are integrated,
-it is hard to mount the structural analysis.
+it is hard to mount the structural analysis directly.
 \item The secret components can be reused in each round for saving memory usage
 in light-weight devices.
-\item The scheme does not require external encodings
-and obfuscation techniques. 
+\item The scheme does not require additionaly external encodings
+nor obfuscation techniques. 
 \end{itemize}
-We will show that the goal of design ratinals cannot be satisfied
+We will show that the goal of design rationale cannot be satisfied
 and weak against structural cryptanalysis in particular.
 
 \subsection{Specification}
 
 LW-WBES is a 120-bit block cipher and the number of round
 can be chosen based on the level of security and the constraints of resources.
-Here, we describe the encryption process of16 round version.
-120-bit plaintext $PT$ is input $(L,R)$ for the Feistel network divided into
+Here, we describe the encryption process of 16-round default version.
+120-bit plaintext $PT=(L,R)$ is input  for the Feistel network divided into
 5-bit variables as:
 \[
 PT = (L,R) = (L_0, L_1, \ldots, L_{11}, R_0, R_1, \ldots, R_{11}),
 \]
 where 
 $L_i, R_i \in GF(2)^5 \text{ for } i=0,1, \ldots, 11$.
-In each round, the round function $F: GF(2)^{60} \to GF(2)^{72}$
-consumes 72-bit black-box round key $rk$.
+In each round, the round function $F: GF(2)^{60}\times GF(2)^{72} \to GF(2)^{72}$
+consumes 72-bit black-box round key $rk$ by
+\[
+F: (x,k) \mapsto (\Theta_0(x)\oplus rk_0, \ldots, \Theta_{11}(x)\oplus rk_{11}),
+\]
+where $\Theta_i$ are nonlinear surjective functions whose outputs are 8-bits 
+and $rk$ is divided into 6-bit components $rk_i$ for $i=0,1,\ldots, 11$.
+In fact, we do not need the details of $\Theta_i$ to construct our attack algorithm.
+Instead of usual mixing by exclusive-or in Feistel network,
+LW-WBES uses nonlinear mixing function called T-box which contains
+white-box key component.
+The round transformation $(X_L, X_R) \mapsto (Y_L, Y_R)$ can be written as
+\[
+\begin{cases}
+Y_L = X_R, \\
+Y_R = T(F(X_R,rk), X_L),
+\end{cases}
+\]
+where T-box $T: GF(2)^{60} \times GF(2)^{72} \to GF(2)^{60}$  consists of
+4 sub-components $G$, $F'$, $H^*$, and $M$.
+\begin{itemize}
+\item $G: GF(2)^{60} \to GF(2)^{60}$ is composed of 12 bjiections
+$G_0, G_1, \ldots, G_{11}$ in parallel so that
+\[
+(x_0, x_1, \ldots, x_{11}) \stackrel{G}{\mapsto} (G_0(x_0), G_1(x_1),\ldots, G_{11}(x_{11})).
+\]
+\item $F': GF(2)^{72} \to GF(2)^{60}$ takes output of round function $F$ and
+squizes them into 60-bits.
+\item $M: GF(2)^{60} \to GF(2)^{60}$ is a linear transformation represented
+by a binary matrix.
+\item $H^*: GF(2)^{60} \to GF(2)^{60}$ is composed of fifteen 4-bit bijections.
+\end{itemize}
 
 \subsection{Security Claim}
 
