@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.1)  13 OCT 2022 01:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.1)  17 OCT 2022 01:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -467,7 +467,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [3]
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 213.
+Package pdftex.def Info: notaglinelogo.png  used on input line 214.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -485,19 +485,14 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [4]
-Underfull \hbox (badness 1448) in paragraph at lines 266--271
+Underfull \hbox (badness 1448) in paragraph at lines 312--317
 \T1/ptm/n/n/10 mod-i-fiers: ``zero-field-cooled mag-ne-ti-za-tion.'' Avoid dan-
 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 31
-3.
-(c:/texlive/2022/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 337.
+Package pdftex.def Info: notaglinelogo.png  used on input line 343.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -515,40 +510,30 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [5]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 35
+9.
+ (c:/texlive/2022/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-53.
- (c:/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+99.
+
+(c:/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
 LaTeX Font Warning: Font shape `TS1/ptm/n/n' undefined
 (Font)              using `TS1/ptm/m/n' instead
-(Font)              for symbol `textonehalf' on input line 353.
+(Font)              for symbol `textonehalf' on input line 399.
 
 
-Overfull \hbox (11.37274pt too wide) in paragraph at lines 398--399
+Overfull \hbox (11.37274pt too wide) in paragraph at lines 444--445
 []\T1/ptm/n/n/10 A gen-eral IEEE styleguide is avail-able at $[]$
- []
-
-
-Underfull \hbox (badness 4765) in paragraph at lines 454--455
-[]\T1/ptm/m/n/8 1 erg/(G$\OMS/cmsy/m/n/8 ^^A$\T1/ptm/m/n/8 g) $\OT1/cmr/m/n/8 =
-$ \T1/ptm/m/n/8 1 emu/g $\OMS/cmsy/m/n/8 !$ \T1/ptm/m/n/8 1
- []
-
-
-Overfull \hbox (14.32645pt too wide) in paragraph at lines 428--488
-[][]
- []
-
-
-Underfull \hbox (badness 2020) in paragraph at lines 506--513
-\T1/ptm/n/n/10 Most charts, graphs, and ta-bles are one col-umn wide
  []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 513.
+Package pdftex.def Info: notaglinelogo.png  used on input line 459.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -566,13 +551,29 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [6]
-Underfull \hbox (badness 1946) in paragraph at lines 543--548
+Underfull \hbox (badness 4765) in paragraph at lines 500--501
+[]\T1/ptm/m/n/8 1 erg/(G$\OMS/cmsy/m/n/8 ^^A$\T1/ptm/m/n/8 g) $\OT1/cmr/m/n/8 =
+$ \T1/ptm/m/n/8 1 emu/g $\OMS/cmsy/m/n/8 !$ \T1/ptm/m/n/8 1
+ []
+
+
+Overfull \hbox (14.32645pt too wide) in paragraph at lines 474--534
+[][]
+ []
+
+
+Underfull \hbox (badness 2020) in paragraph at lines 552--559
+\T1/ptm/n/n/10 Most charts, graphs, and ta-bles are one col-umn wide
+ []
+
+
+Underfull \hbox (badness 1946) in paragraph at lines 589--594
 \T1/ptm/n/n/10 color space. Grayscale im-ages should be sub-mit-ted in
  []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 594.
+Package pdftex.def Info: notaglinelogo.png  used on input line 605.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -590,13 +591,13 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [7]
-Underfull \hbox (badness 2799) in paragraph at lines 611--622
+Underfull \hbox (badness 2799) in paragraph at lines 657--668
 \T1/ptm/n/n/10 The IEEE Graph-ics An-a-lyzer en-ables au-thors to pre-
  []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 701.
+Package pdftex.def Info: notaglinelogo.png  used on input line 713.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -615,78 +616,43 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [8]
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 7
-27.
+73.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
-Underfull \hbox (badness 4779) in paragraph at lines 728--736
+Underfull \hbox (badness 4779) in paragraph at lines 774--782
 \T1/ptm/n/n/10 Contributions to the Trans-ac-tions, Jour-nals, and Let-
  []
 
 
-Underfull \hbox (badness 4940) in paragraph at lines 728--736
+Underfull \hbox (badness 4940) in paragraph at lines 774--782
 \T1/ptm/n/n/10 ters may be sub-mit-ted elec-tron-i-cally on IEEE's on-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 728--736
+Underfull \hbox (badness 10000) in paragraph at lines 774--782
 \T1/ptm/n/n/10 line manuscript sub-mis-sion and peer-review sys-tem,
  []
 
 
-Underfull \hbox (badness 4886) in paragraph at lines 728--736
+Underfull \hbox (badness 4886) in paragraph at lines 774--782
 \T1/ptm/n/n/10 Schol-arOne\TS1/ptm/n/n/10 ® \T1/ptm/n/n/10 Manuscripts. You can
  get a list-ing of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 728--736
+Underfull \hbox (badness 10000) in paragraph at lines 774--782
 \T1/ptm/n/n/10 the pub-li-ca-tions that par-tic-i-pate in Schol-arOne at
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 728--736
+Underfull \hbox (badness 10000) in paragraph at lines 774--782
 []$
- []
-
-
-Underfull \hbox (badness 7397) in paragraph at lines 776--783
-\T1/ptm/n/n/10 Authors must sub-mit an elec-tronic IEEE Copy-right
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 776--783
-\T1/ptm/n/n/10 Form (eCF) upon sub-mit-ting their fi-nal manuscript
- []
-
-
-Underfull \hbox (badness 4242) in paragraph at lines 776--783
-\T1/ptm/n/n/10 files. You can ac-cess the eCF sys-tem through your
- []
-
-
-Underfull \hbox (badness 3872) in paragraph at lines 776--783
-\T1/ptm/n/n/10 manuscript sub-mis-sion sys-tem or through the Au-thor
- []
-
-
-Underfull \hbox (badness 3189) in paragraph at lines 776--783
-\T1/ptm/n/n/10 Gate-way. You are re-spon-si-ble for ob-tain-ing any nec-
- []
-
-
-Underfull \hbox (badness 3189) in paragraph at lines 776--783
-\T1/ptm/n/n/10 es-sary ap-provals and/or se-cu-rity clear-ances. For ad-di-
- []
-
-
-Underfull \hbox (badness 3492) in paragraph at lines 776--783
-\T1/ptm/n/n/10 at $[]$
  []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 795.
+Package pdftex.def Info: notaglinelogo.png  used on input line 814.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -704,30 +670,64 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [9]
+Underfull \hbox (badness 7397) in paragraph at lines 822--829
+\T1/ptm/n/n/10 Authors must sub-mit an elec-tronic IEEE Copy-right
+ []
 
-LaTeX Warning: Citation `b1' on page 10 undefined on input line 829.
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--829
+\T1/ptm/n/n/10 Form (eCF) upon sub-mit-ting their fi-nal manuscript
+ []
 
 
-Underfull \hbox (badness 2617) in paragraph at lines 850--853
+Underfull \hbox (badness 4242) in paragraph at lines 822--829
+\T1/ptm/n/n/10 files. You can ac-cess the eCF sys-tem through your
+ []
+
+
+Underfull \hbox (badness 3872) in paragraph at lines 822--829
+\T1/ptm/n/n/10 manuscript sub-mis-sion sys-tem or through the Au-thor
+ []
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 822--829
+\T1/ptm/n/n/10 Gate-way. You are re-spon-si-ble for ob-tain-ing any nec-
+ []
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 822--829
+\T1/ptm/n/n/10 es-sary ap-provals and/or se-cu-rity clear-ances. For ad-di-
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 822--829
+\T1/ptm/n/n/10 at $[]$
+ []
+
+
+LaTeX Warning: Citation `b1' on page 10 undefined on input line 875.
+
+
+Underfull \hbox (badness 2617) in paragraph at lines 896--899
 \T1/ptm/n/n/10 J. K. Au-thor, ``Name of pa-per,'' \T1/ptm/m/it/10 Ab-brev. Ti-t
 le of
  []
 
 
-Underfull \hbox (badness 5077) in paragraph at lines 850--853
+Underfull \hbox (badness 5077) in paragraph at lines 896--899
 \T1/ptm/m/it/10 Pe-ri-od-i-cal\T1/ptm/n/n/10 , vol. $\OML/cmm/m/it/10 x$\T1/ptm
 /n/n/10 , no. $\OML/cmm/m/it/10 x$\T1/ptm/n/n/10 , pp. \T1/ptm/m/it/10 xxx--xxx
 \T1/ptm/n/n/10 , Ab-brev.
  []
 
 
-Underfull \hbox (badness 1394) in paragraph at lines 854--857
+Underfull \hbox (badness 1394) in paragraph at lines 900--903
 \T1/ptm/n/n/10 J.K. Au-thor. (year, month). Ti-tle. pre-sented at ab-
  []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 878.
+Package pdftex.def Info: notaglinelogo.png  used on input line 903.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -745,58 +745,24 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [10]
-Underfull \hbox (badness 4266) in paragraph at lines 882--884
+Underfull \hbox (badness 4266) in paragraph at lines 928--930
 []\T1/ptm/m/it/10 Basic for-mat for the-ses (M.S.) and dis-ser-ta-tions
  []
 
 
-Underfull \hbox (badness 1406) in paragraph at lines 891--892
+Underfull \hbox (badness 1406) in paragraph at lines 937--938
 []\T1/ptm/n/n/10 J. K. Au-thor, pri-vate com-mu-ni-ca-tion, Ab-brev.
  []
 
 
-Underfull \hbox (badness 3229) in paragraph at lines 1012--1013
+Underfull \hbox (badness 3229) in paragraph at lines 1058--1059
 []\T1/ptm/m/n/7.61 W.-K. Chen, \T1/ptm/m/it/7.61 Lin-ear Net-works and Sys-tems
 . \T1/ptm/m/n/7.61 Bel-mont, CA, USA:
  []
 
-LaTeX Font Info:    Calculating math sizes for size <7.61> on input line 1024.
-
-Underfull \hbox (badness 2181) in paragraph at lines 1028--1033
-[]\T1/ptm/m/n/7.61 G. O. Young, ``Syn-thetic struc-ture of in-dus-trial plas-ti
-cs,'' in Plas-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1038--1041
-\T1/ptm/m/n/7.61 Avail-able: $[]$.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1053--1057
-[]\T1/ptm/m/n/7.61 PROCESS Cor-po-ra-tion, Boston, MA, USA. In-tranets: In-ter-
-net
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1053--1057
-\T1/ptm/m/n/7.61 Pre-sented at INET96 An-nual Meet-ing. [On-line]. Avail-able:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1060--1063
-[]\T1/ptm/m/n/7.61 Teralyzer. Lytera UG, Kirch-hain, Ger-many [On-line]. Avail-
-able:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1060--1063
-[]$\T1/ptm/m/n/7.61 ,
- []
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 1068.
+Package pdftex.def Info: notaglinelogo.png  used on input line 1069.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -814,43 +780,73 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [11]
-<Yongjin_Yeom.png, id=64, 115.43124pt x 151.56625pt>
+LaTeX Font Info:    Calculating math sizes for size <7.61> on input line 1070.
+
+Underfull \hbox (badness 2181) in paragraph at lines 1074--1079
+[]\T1/ptm/m/n/7.61 G. O. Young, ``Syn-thetic struc-ture of in-dus-trial plas-ti
+cs,'' in Plas-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1084--1087
+\T1/ptm/m/n/7.61 Avail-able: $[]$.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1099--1103
+[]\T1/ptm/m/n/7.61 PROCESS Cor-po-ra-tion, Boston, MA, USA. In-tranets: In-ter-
+net
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1099--1103
+\T1/ptm/m/n/7.61 Pre-sented at INET96 An-nual Meet-ing. [On-line]. Avail-able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1106--1109
+[]\T1/ptm/m/n/7.61 Teralyzer. Lytera UG, Kirch-hain, Ger-many [On-line]. Avail-
+able:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1106--1109
+[]$\T1/ptm/m/n/7.61 ,
+ []
+
+<Yongjin_Yeom.png, id=65, 115.43124pt x 151.56625pt>
 File: Yongjin_Yeom.png Graphic file (type png)
 <use Yongjin_Yeom.png>
-Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1096.
+Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1142.
 (pdftex.def)             Requested size: 68.80132pt x 90.33914pt.
 File: Yongjin_Yeom.png Graphic file (type png)
 <use Yongjin_Yeom.png>
-Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1096.
+Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1142.
 (pdftex.def)             Requested size: 68.80132pt x 90.33914pt.
 File: Yongjin_Yeom.png Graphic file (type png)
 <use Yongjin_Yeom.png>
-Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1122.
+Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1168.
 (pdftex.def)             Requested size: 68.80132pt x 90.33914pt.
 File: Yongjin_Yeom.png Graphic file (type png)
 <use Yongjin_Yeom.png>
-Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1122.
+Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1168.
 (pdftex.def)             Requested size: 68.80132pt x 90.33914pt.
 
-Underfull \hbox (badness 2189) in paragraph at lines 1122--1140
+Underfull \hbox (badness 2189) in paragraph at lines 1168--1186
 \T1/ptm/n/n/8 lottesville, in 2001 and the Ph.D. de-gree in
  []
 
 File: Yongjin_Yeom.png Graphic file (type png)
 <use Yongjin_Yeom.png>
-Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1142.
+Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1188.
 (pdftex.def)             Requested size: 68.80132pt x 90.33914pt.
 File: Yongjin_Yeom.png Graphic file (type png)
 <use Yongjin_Yeom.png>
-Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1142.
+Package pdftex.def Info: Yongjin_Yeom.png  used on input line 1188.
 (pdftex.def)             Requested size: 68.80132pt x 90.33914pt.
-File: bullet.png Graphic file (type png)
-<use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 1161.
-(pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 1163.
+Package pdftex.def Info: notaglinelogo.png  used on input line 1205.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -867,7 +863,33 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[12 <./Yongjin_Yeom.png (PNG copy)>] (./WBC_paper.aux)
+[12 <./Yongjin_Yeom.png (PNG copy)>]
+File: bullet.png Graphic file (type png)
+<use bullet.png>
+Package pdftex.def Info: bullet.png  used on input line 1207.
+(pdftex.def)             Requested size: 5.0pt x 14.6871pt.
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 1209.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[13
+
+] (./WBC_paper.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -879,13 +901,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4620 strings out of 478268
- 72043 string characters out of 5850346
- 389524 words of memory out of 5000000
- 22718 multiletter control sequences out of 15000+600000
- 593982 words of font info for 187 fonts, out of 8000000 for 9000
+ 4621 strings out of 478268
+ 72055 string characters out of 5850346
+ 391014 words of memory out of 5000000
+ 22719 multiletter control sequences out of 15000+600000
+ 595626 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,13n,76p,2301b,500s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,13n,76p,2301b,502s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1
@@ -897,19 +919,20 @@ e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:
-/texlive/2022/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2022/te
-xmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2022/texmf-dist/fonts/
-type1/urw/helvetic/uhvbo8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/helv
-etic/uhvr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pf
-b><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2022
-/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2022/texmf-dist/fonts/
-type1/urw/times/utmri8a.pfb>
-Output written on WBC_paper.pdf (12 pages, 327651 bytes).
+nts/cm/cmsy5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:
+/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2
+022/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2022/texmf-dist/f
+onts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/
+helvetic/uhvbo8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvr8
+a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb><c:/texl
+ive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2022/texmf-dis
+t/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/
+times/utmri8a.pfb>
+Output written on WBC_paper.pdf (13 pages, 342157 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
+ 179 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  65 words of extra memory for PDF output out of 10000 (max. 10000000)
 

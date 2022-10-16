@@ -200,11 +200,14 @@ The round transformation $(X_L, X_R) \mapsto (Y_L, Y_R)$ can be written as
 \[
 \begin{cases}
 Y_L = X_R, \\
-Y_R = T(F(X_R,rk), X_L),
+Y_R = T(X_L, F(X_R,rk)),
 \end{cases}
 \]
 where T-box $T: GF(2)^{60} \times GF(2)^{72} \to GF(2)^{60}$  consists of
-4 sub-components $G$, $F'$, $H^*$, and $M$.
+4 sub-components $G$, $F'$, $H^*$, and $M$ is defined as
+\[
+T(x,y) = H^*(M(G(x)\oplus F'(y)))
+\]
 \begin{itemize}
 \item $G: GF(2)^{60} \to GF(2)^{60}$ is composed of 12 bjiections
 $G_0, G_1, \ldots, G_{11}$ in parallel so that
@@ -213,10 +216,54 @@ $G_0, G_1, \ldots, G_{11}$ in parallel so that
 \]
 \item $F': GF(2)^{72} \to GF(2)^{60}$ takes output of round function $F$ and
 squizes them into 60-bits.
-\item $M: GF(2)^{60} \to GF(2)^{60}$ is a linear transformation represented
-by a binary matrix.
+\[
+(y_0, y_1, \ldots, y_{11}) \stackrel{F'}{\mapsto} (F'_0(y_0), F'_1(y_1),\ldots, F'_{11}(y_{11})).
+\]
+\item $M: GF(2)^{60} \to GF(2)^{60}$ is an invertible linear transformation represented
+by a binary matrix $M$ whose 5-bit columns are $M_0, M_1, \ldots, M_{11}$.
+\[
+M = \left( M_0 M_1 \cdots M_{11} \right), 
+\]
+where $M_j$ are $60\times 5$ submatrices for $j=0,1,\ldots, 11$.
 \item $H^*: GF(2)^{60} \to GF(2)^{60}$ is composed of fifteen 4-bit bijections.
 \end{itemize}
+The component functions $F'$, $G$, $M$, and $H^*$ are
+white-box keys that cannot be exposed during the white-box implementation of encryption process.
+
+In the white-box encryption algorithm,
+evaluations of T-box $T$ are possible without knowing its component functions (white-box keys),
+since $T$ is implemented as several steps of table look-ups.
+In fact, T-box $T$ without final transformation $H^*$, 
+say $\tilde T(x,y):= M(G(x)\oplus F'(y))$, can be represented
+by the tables of 12-bit input and 60-bit output as follows:
+\[
+\tilde T: GF(2)^{60} \times GF(2)^{72} \to GF(2)^{60}, 
+\]
+where its first input is $x = (x_0, x_1, \ldots, x_{11})$  
+and the second is $y = (y_0, y_1, \ldots , y_{11})$.
+Then we can rewrite $\tilde T$ as  
+\begin{gather*}
+\tilde T: GF(2)^{11} \to GF(2)^{60},\\
+\left( (x_0, y_0), (x_1, y_1), \ldots, (x_{11}, y_{11}) \right)
+\stackrel{\tilde T}{\mapsto} (z_0, z_1, \ldots, z_{14}).
+\end{gather*}
+Define $\tilde T_j(x_j, y_j) = M_j( G(x_j) \oplus F'(y_j))$ for
+$0\le j \le 11$.
+Then 
+\begin{align*}
+\tilde T(x,y) & := M(G(x)\oplus F'(y)) \\
+&= M_0(G_0(x_0)\oplus F'_0(y_0)) \oplus \cdots \\
+& \quad\quad \cdots\oplus M_{11}(G_{11}(x_{11}) \oplus F'_{11}(y_{11})) \\
+&= \tilde T_0(x_0, y_0) \oplus \cdots \oplus \tilde T_{11}(x_{11}, y_{11}).
+\end{align*}
+Note that each $\tilde T_j(x_j, y_j)$ can be implemented
+as a pre-computed table with $2^{11}$ entries which takes 15,360 bytes.
+On the other hand, 60-bit output of $\tilde T$ can be divided into 
+fifteen 4-bit subblocks $(z_0, z_1, \ldots, z_{14})$.
+In order to apply a 4-bit nonlinear bijection on each $z_k$ 
+in the output of table $\tilde T_j(x_j, y_j)$ lookup,
+we have to use masked adders depicted in Chow's WB-AES.
+
 
 \subsection{Security Claim}
 
