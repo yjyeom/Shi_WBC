@@ -260,10 +260,16 @@ Note that each $\tilde T_j(x_j, y_j)$ can be implemented
 as a pre-computed table with $2^{11}$ entries which takes 15,360 bytes.
 On the other hand, 60-bit output of $\tilde T$ can be divided into 
 fifteen 4-bit subblocks $(z_0, z_1, \ldots, z_{14})$.
-In order to apply a 4-bit nonlinear bijection on each $z_k$ 
-in the output of table $\tilde T_j(x_j, y_j)$ lookup,
-we have to use masked adders depicted in Chow's WB-AES.
+Apply a 4-bit random nonlinear bijection $h_k$ on each $z_k$ ($k=0,1,\ldots, 14)$
+in the output of lookup table $\tilde T_j(x_j, y_j)$. Then
+we have to use a cascade structure of masked adders 
+to obtain the final output of $T$ including $H^*$ layer, 
+as depicted in Chow's WB-AES.
 
+The ciphertext of LW-WBES is produced by iterating this process 16 times
+with trhe corresponding black-box and white-box keys at each round.
+Note that there are no output encoding at the end of the final round,
+since nonlinear bijections appear in the T-box $T$.
 
 \subsection{Security Claim}
 
