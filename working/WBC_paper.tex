@@ -205,9 +205,10 @@ Y_R = T(X_L, F(X_R,rk)),
 \]
 where T-box $T: GF(2)^{60} \times GF(2)^{72} \to GF(2)^{60}$  consists of
 4 sub-components $G$, $F'$, $H^*$, and $M$ is defined as
-\[
+\begin{equation}\label{eq-T-box}
 T(x,y) = H^*(M(G(x)\oplus F'(y)))
-\]
+\end{equation}
+
 \begin{itemize}
 \item $G: GF(2)^{60} \to GF(2)^{60}$ is composed of 12 bjiections
 $G_0, G_1, \ldots, G_{11}$ in parallel so that
@@ -225,7 +226,8 @@ by a binary matrix $M$ whose 5-bit columns are $M_0, M_1, \ldots, M_{11}$.
 M = \left( M_0 M_1 \cdots M_{11} \right), 
 \]
 where $M_j$ are $60\times 5$ submatrices for $j=0,1,\ldots, 11$.
-\item $H^*: GF(2)^{60} \to GF(2)^{60}$ is composed of fifteen 4-bit bijections.
+\item $H^*: GF(2)^{60} \to GF(2)^{60}$ is composed of fifteen 4-bit bijections
+$(h^*_0, h^*_1, \ldots, h^*_{14})$.
 \end{itemize}
 The component functions $F'$, $G$, $M$, and $H^*$ are
 white-box keys that cannot be exposed during the white-box implementation of encryption process.
@@ -277,33 +279,129 @@ In order to hide white-box keys in T-box $T$,
 LW-WBES uses 12 tables $T_i: GF(2)^5 \times GF(2)^6 \to GF(2)^{60}$
 for $i=0,1,\ldots, 11$ definded as
 \[
-T_i(x_i, k_i) := H'(\tilde T_i(x_i, k_i)),
+T_i(x_i, y_i) := H'_i(\tilde T_i(x_i, y_i)),
 \]
-where $H'$ consists of 4-bit random bijections
-$(h'_0, h'_1, \ldots, h'_{14})$ so that
+where $H'_i$ consists of 4-bit random bijections
+$(h'_{i,0}, \ldots, h'_{i,14})$ so that
 each output can be written as
 \[
-T_i(x_i, k_i) = (h'_0(z_0), h'_1(z_1), \ldots, h'_{14}(z_{14})).
+T_i(x_i, y_i) = (h'_{i,0}(z_{i,0}), h'_{i,1}(z_{i,1}), \ldots, h'_{i,14}(z_{i,14})).
 \]
+In fact, T-box produces output end with nonlinear bijection $H^*$ as \eqref{eq-T-box}:
+\begin{align}
+T(x,y) &= H^*(M(G(x)\oplus F'(y))) \nonumber \\
+&= H^*(\tilde T(x,y)) \nonumber \\
+&= H^*\left( \tilde T_0(x_0, y_0) \oplus \cdots \oplus \tilde T_{11}(x_{11}, y_{11})
+\right) \nonumber \\
+&= H^*\Big( H'^{-1}_0\circ T_0(x_0, y_0) \oplus \cdots \nonumber \\
+& \quad\quad\quad \cdots \oplus H'^{-1}_{11}\circ T_{11}(x_{11}, y_{11})
+\Big)   \label{eq-2}
+\end{align}
+Note that exclusive-or operations can be considered as 
+operations on each 4-bit components. 
+For instance, the first 4-bit output of $T(x,y)_{[0:3]}$ is
+computed as
+\[
+h^*_0\left(
+h'^{-1}_{0,0}(T_0(x_0,y_0)_{[0:3]}) \oplus \cdots
+\oplus h'^{-1}_{11,0}(T_{11}(x_{11},y_{11})_{[0:3]})
+\right).
+\]
+When we have two masked variables $w_1=h_1(z_1)$ and $w_2=h_2(z_2)$
+with random bijection $h_1$ and $h_2$, respectively,
+the masked exclusive-or with bijection $h^*$ can be computed by
+\begin{align}
+h^*(z_1 \oplus z_2)
+& = h^*\left(
+h_1^{-1}(h_1(z_1)) \oplus h_2^{-1}(h_2(z_2)) \right) \nonumber \\
+&= h^*\left( h_1^{-1}(w_1) \oplus h_2^{-1}(w_2) \right) \label{eq-3}
+\end{align}
 
-Masked Adder generates
-The final output: $h^*...$
+If each variable in \eqref{eq-3} represents $n$-bit data,
+$2n$-bit to $n$-bit lookup table $L_{h^*}: (w_1, w_2) \mapsto h^*(z_1 \oplus z_2)$
+hide its internal components $h_1$, $h_2$, and $h^*$.
+This technique called `Masked Adder' enables us to obtain $T(x,y)$
+without revealing $H^*$ by using a cascade of lookup tables.
 
+In the white-box implementation of T-box,
+the encrytopn process accesses the lookup tables
+$T_0, \ldots, T_{11}$ and masked adders.
+Hence, encryptor (as well as white-box adversary) cannot extract
+the white-box keys such as $G$, $F'$ and $H^*$.
+Furthermore, LW-WBES is designed to provide one-wayness.
+That is, it is not feasible to perform decryption process 
+only with the white-box implementation of encyption.
 
-\begin{itemize}
-\item Design rationale
-\item specification of WB encrytion scheme
-\item Security claim
-\end{itemize}
-
+To sum up, LW-WBES is claimed to be secure 
+against black-box attack as well as white-box attack contexts.
+Its Feistel structure with black-box round keys  resists against
+black-box attack and a large set of white-box keys implemented in T-boxes
+enhances the security against white-box adversaries.
+However, we will show later that it is possible to recover the plaintext from 
+the corresponding ciphertext by accessing white-box encryptin orable only.
+In fact, inverting T-box can be done by structural analysis of the SAS variant
+explained in the next section.
 
 \section{Structural analysis of $S^{(1)}AS^{(2)}$}
 
+For a given black-box function $F$,
+Structrural analysis is the study of revealing its internal components
+informally defined as:
+\begin{quote}
+Given a function $F$ with known internal structure,
+{\bf structural analysis} is defined as the analysis of $F$
+to find an equivalent function $F^*$ by determining its internal components explicitly.
+\end{quote}
+
+Suppose that we have a bijective function $F$ as
+\[
+f:GF(2)^N \to GF(2)^N,
+\] 
+where $N = m\times k$.
+Additionally, we assume following conditions on $F$:
 \begin{itemize}
-\item Intro. to structural analysis
-\item brief history
-\item Our result
+\item Given $x$, anyone can compute $F(x)$ with ease.
+\item $N$ is large enough so that it is infeasible to invert $F$.
+i.e., for a given $y$, it is not possible to find $x$ satisfying 
+$F(x) = y$ within a reasonable time. 
+\item The number of its internal components and the size of input and output
+of each component are known to public. 
+\item The structure(how to combine components) of $F$ is open to public
+but each component itself is not known except for its input and output sizes.
 \end{itemize}
+
+Last two decades, 
+the structrural analysis has been studied for functions with layered structure.
+In 2002, Biryukov et al. proved that a function of SASAS structure
+can be analyzed successfully so that one can construct an equivalent function 
+explicitly, where $S$ layer is composed of small nonlinear S-boxes in parallel
+and $A$ layer is an affine or linear transformation.
+Later, several types of structural analysis such as ASASA have been considered.
+
+LW-WBES uses a variant of SAS structure for T-box which
+consists of two $S$ layers with different size of S-boxes and a linear function
+between them.
+In this section, we focus on bijective functions with $S^{(1)}AS^{(2)}$ structure as follows:
+\begin{itemize}
+\item $S^{(1)}: GF(2)^{m_1 \cdot k_1} \to GF(2)^{m_1 \cdot k_1}$ 
+\[
+S^{(1)}(x_0, \ldots, x_{k_1-1}) = s^{(1)}_0(x_0) \| \cdots \| s^{(1)}_{k_1-1}(x_{k_1-1}).
+\]
+\item $A: GF(2)^{m_1 \cdot k_1} \to GF(2)^{m_1 \cdot k_1}$  is a linear transformation
+on the vector space over $G(2)$ which can be represented by
+$m_1\cdot k_1 \times m_1\cdot k_1$ matrix.
+\item $S^{(2)}: GF(2)^{m_2 \cdot k_2} \to GF(2)^{m_2 \cdot k_2}$ 
+\[
+S^{(2)}(x_0, \ldots, x_{k_2-1}) = s^{(2)}_0(x_0) \| \cdots \| s^{(2)}_{k_2-1}(x_{k_2-1}).
+\]
+\end{itemize}
+Since the function is a bijection, we observe that
+$m_1\cdot k_1 = m_2\cdot k_2$. 
+In LW-WBES, they choose $m_1 = 5$, $k_1 =12$ and
+$m_2=4$ and $k_2 = 15$ so that $N=5\times 12 =4\times 15= 60$ bits.
+
+Our goal for structural analysis is to find an equivalent function $F^*$
+
 
 \section{Cryptanalysis of Shi's Algorithm}
 
