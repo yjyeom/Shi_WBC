@@ -1,9 +1,55 @@
 \documentclass{ieeeaccess}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{algorithmic}
+%\usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
+
+\usepackage{thmtools}
+\declaretheorem[numberwithin=section]{theorem}
+
+
+
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{mathtools}
+\usepackage{setspace}
+%\usepackage{algorithmicx}
+%\usepackage{algorithm2e}
+
+\newcommand{\multiline}[1]{%
+    \begin{tabularx}{\dimexpr\linewidth-\ALG@thistlm}[t]{@{}X@{}}
+        #1
+    \end{tabularx}
+}
+
+\newcommand{\Input}[1]{\algrenewcommand{\alglinenumber}[1]{Input: \ \setcounter{ALG@line}{\numexpr##1-1}} #1}
+\newcommand{\Step}[1]{\algrenewcommand{\alglinenumber}[1]{Step ##1: } #1}
+\newcommand{\NoNumber}{\algrenewcommand{\alglinenumber}[1]{\setcounter{ALG@line}{\numexpr##1-1} \ \ \ \ \ \ \ \ \ \ }}
+\newcommand{\Output}[1]{\algrenewcommand{\alglinenumber}[1]{Output:\setcounter{ALG@line}{\numexpr##1-1}} #1}
+
+\makeatletter
+\newenvironment{breakablealgorithm}
+  {% \begin{breakablealgorithm}
+   \begin{flushleft}
+     \refstepcounter{algorithm}% New algorithm
+     \hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+     \renewcommand{\caption}[2][\relax]{% Make a new \caption
+       {\raggedright\textbf{\fname@algorithm~\thealgorithm} ##2\par}%
+       \ifx\relax##1\relax % #1 is \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+       \else % #1 is not \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+       \fi
+       \kern2pt\hrule\kern2pt
+     }
+  }{% \end{breakablealgorithm}
+     \kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+   \end{flushleft}
+  }
+\makeatother
+
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -342,11 +388,11 @@ the corresponding ciphertext by accessing white-box encryptin orable only.
 In fact, inverting T-box can be done by structural analysis of the SAS variant
 explained in the next section.
 
-\section{Structural analysis of $S^{(1)}AS^{(2)}$}
+\section{Structural analysis}
 
 For a given black-box function $F$,
-Structrural analysis is the study of revealing its internal components
-informally defined as:
+the goal of structrural analysis is to reveal its internal components explicitly.
+informally,
 \begin{quote}
 Given a function $F$ with known internal structure,
 {\bf structural analysis} is defined as the analysis of $F$
@@ -355,19 +401,20 @@ to find an equivalent function $F^*$ by determining its internal components expl
 
 Suppose that we have a bijective function $F$ as
 \[
-f:GF(2)^N \to GF(2)^N,
+f:GF(2)^N \to GF(2)^N.
 \] 
-where $N = m\times k$.
+%where $N = m\times k$.
 Additionally, we assume following conditions on $F$:
 \begin{itemize}
 \item Given $x$, anyone can compute $F(x)$ with ease.
-\item $N$ is large enough so that it is infeasible to invert $F$.
+\item Positive integer $N$ is large enough so that it is infeasible to invert $F$.
 i.e., for a given $y$, it is not possible to find $x$ satisfying 
 $F(x) = y$ within a reasonable time. 
 \item The number of its internal components and the size of input and output
 of each component are known to public. 
 \item The structure(how to combine components) of $F$ is open to public
 but each component itself is not known except for its input and output sizes.
+Thue, given $x$, we merely calculate $F(x)$ without knowing intermediate values.
 \end{itemize}
 
 Last two decades, 
@@ -375,9 +422,27 @@ the structrural analysis has been studied for functions with layered structure.
 In 2002, Biryukov et al. proved that a function of SASAS structure
 can be analyzed successfully so that one can construct an equivalent function 
 explicitly, where $S$ layer is composed of small nonlinear S-boxes in parallel
-and $A$ layer is an affine or linear transformation.
+and $A$ layer is an affine or a linear transformation.
 Later, several types of structural analysis such as ASASA have been considered.
 
+
+For a given $F$, our goal for structural analysis is 
+to find an equivalent function $F^*$ explicitly.
+
+\subsection{Multiset properties}
+
+We define a multiset by a set 
+
+
+\subsection{Structural analysis of $S^{(1)}AS^{(2)}$}
+
+Multiset properties play a key role in the structural analysis.
+For example, suppose that $N$-bit function $F$ has SASAS structure
+and each $S$-layer consists of $m$-bit S-boxes.
+Then if we use input multiset of the form $(P,C,C,\ldots, C)$,
+output  of $F$ has B(balanced) property [Biryukov].
+
+We focus on the $S^{(1)}AS^{(2)}$ structure for T-box function.
 LW-WBES uses a variant of SAS structure for T-box which
 consists of two $S$ layers with different size of S-boxes and a linear function
 between them.
@@ -389,21 +454,157 @@ S^{(1)}(x_0, \ldots, x_{k_1-1}) = s^{(1)}_0(x_0) \| \cdots \| s^{(1)}_{k_1-1}(x_
 \]
 \item $A: GF(2)^{m_1 \cdot k_1} \to GF(2)^{m_1 \cdot k_1}$  is a linear transformation
 on the vector space over $G(2)$ which can be represented by
-$m_1\cdot k_1 \times m_1\cdot k_1$ matrix.
+an $m_1 k_1 \times m_1 k_1$ matrix.
 \item $S^{(2)}: GF(2)^{m_2 \cdot k_2} \to GF(2)^{m_2 \cdot k_2}$ 
 \[
 S^{(2)}(x_0, \ldots, x_{k_2-1}) = s^{(2)}_0(x_0) \| \cdots \| s^{(2)}_{k_2-1}(x_{k_2-1}).
 \]
 \end{itemize}
 Since the function is a bijection, we observe that
-$m_1\cdot k_1 = m_2\cdot k_2$. 
-In LW-WBES, they choose $m_1 = 5$, $k_1 =12$ and
-$m_2=4$ and $k_2 = 15$ so that $N=5\times 12 =4\times 15= 60$ bits.
+\[
+N:=m_1\cdot k_1 = m_2\cdot k_2.
+\]
+LW-WBES chooses $m_1 = 5$, $k_1 =12$ and
+$m_2=4$, $k_2 = 15$ so that $N=5\times 12 =4\times 15= 60$ bits.
 
-Our goal for structural analysis is to find an equivalent function $F^*$
+We can remove $S^{(2)}$-layer efficiently by Theorem \ref{thm-4-1}.
+\begin{theorem}\label{thm-4-1}
+For a given function $F = S^{(2)}\circ A\circ S^{(1)}$ structure,
+we can find a function $\tilde{S}^{(2)}$ such that
+\[
+({\tilde{S}^{(2)}})^{-1} \circ F = \tilde A \circ S^{(1)}.
+\]
+\end{theorem}
+{\it proof. \ } 
+Choose $2^{m_1}$ input data %$\{X_i : i=0,1,\ldots, 2^{m_1}-1 \}$
+\[
+X_i := (x_{0,i}, x_{1,i}, \ldots, x_{k_1-1,i}), \quad i=0,1,\ldots, 2^{m_1}-1
+\]
+that form a multiset with property
+$(D, D, \ldots, D)$.
+Then $S^{(1)}$-layer preserves the multiset property and
+the input of $S^{(2)}$-layer has balanced property $(B,B,\ldots, B)$.
+The output of $F$ can be written as
+\[
+Y_i:=(y_{0,i}, y_{1,i}, \ldots, y_{k_2-1,i}), \quad i=0,1,\ldots, 2^{m_1}-1.
+\]
+It follows from the above balanced property that
+\begin{equation}\label{eq-4}
+\bigoplus_{i=0}^{2^{m_1}-1} (s_k^{(2)})^{-1}(y_{k,i}) = 0, \quad
+k=0,1,\ldots, k_2-1.
+\end{equation}
+In order to determine the component $s_k^{(2)}$, we introduce new variables
+$z_{k,0}, z_{k,1}, \ldots, z_{k,2^{m_2}-1}$ such that
+\[
+z_{k,j} = (s_k^{(2)})^{-1}(j), \quad j=0,1,\ldots, 2^{m_2}-1.
+\]
+For a fixed $k$, the equation \eqref{eq-4} can be interpreted as
+the equation for unknowns $z_{k,0}, z_{k,1}, \ldots, z_{k,2^{m_2}-1}$.
+Choose another input multiset and repeating this process 
+until we obtain ``{\it sufficiently many}'' linearly independent equations.
+Then we can pick a solution of the system of linear equations,
+which means that we determine the internal component $s_k^{(2)}$ of $F$.
+Note that the solution is not unique. If we find a solution $s_k^{(2)}$,
+then  $s_k^{(2)}\circ a_k$ is also a solution, where $a_k$ is an affine map.
 
+
+On the other hand, suppose that $F$ is designed as
+\[
+F= S^{(2)}\circ A\circ S^{(1)}
+\]
+and we also know all functions used as internal components.
+Then it is easy to find a class of equivalent functions
+\begin{equation}\label{eq-5}
+F^* = \tilde S^{(2)} \circ \tilde A \circ S^{(1)},
+\end{equation}
+by inserting an affine layer $a^*$ and its inverse between $S^{(2)}$ and $A$,
+where
+\[
+a^* = (a_0^*, a_1^*, \ldots, a_{k_2-1}^*),
+\]
+and $a_ k^*$ ($k=0,1,\ldots, k_2-1$) is an $m_2$-bit affine bijection.
+If we choose $\tilde S^{(2)} := S^{(2)} \circ (a^*)^{-1}$ and $\tilde A := a^*\circ A$,
+then $F^* = F$ as a black-box function.
+Thus each $s_k^{(2)}$ has ${\cal N}(m_2)$ equivalent forms,
+where ${\cal N}(m_2)$ is the number of $m_2$-bit affine bijections.
+
+Reconsider the meaning of ``{\it sufficiently many}'' mentioned  above in the proof.
+If we collect $2^{m_2}-m_2-1$ linearly independent equations for $z_{k,j}$'s,
+then a system of linear equations of the form \eqref{eq-4}
+has $m_2+1$ dimensional kernel by the rank-nullity theorem [Strang].
+Then there are $m_2+1$ free variables among $z_{k,j}$'s.
+We have ${\cal N}(m_2)$ possible cases since we have to choose
+them so that $s_k^{(2)}$ is invertible.
+
+To sum up, if we have $2^{m_2}-m_2-1$ linearly independent equations for for $z_{k,j}$'s
+and choose a solution to define $\tilde s_k^{(2)}$, then
+there exists an affine bijection $a_k^*$ such that
+\[
+\tilde s_k^ {(2)} = s_k^{(2)} \circ a_k^*.
+\]
+Set 
+\begin{align*}
+\tilde S^{(2)} & := \tilde s_0^{(2)} \| \cdots \| \tilde s_{k_2-1}^{(2)}, \\
+\tilde A &:= \left((a_0^*)^{-1} \| \cdots \| (a_{k_2-1}^*)^{-1}\right)\circ A.
+\end{align*}
+Then
+$ F = {\tilde{S}^{(2)}} \circ \tilde A \circ S^{(1)}$.
+This completes the proof. \hfill $\square$
+
+Note that we can construct input multisets $(D,D,\ldots, D)$ easily
+by adding two layers at the begining of $F$ so that
+the resulting function has $SASAS$ structure.
+Applying input as $(P, C, C,\ldots, C)$, we expect the same result.
+Thus we can make as many input multisets as we wish 
+by choosing constant parts arbitrarily.
+Thus it is easy to collect $2^{m_2}-m_2-1$ lineary independent equations.
+
+\begin{breakablealgorithm}
+    \setstretch{1.2}
+    \caption{Removing $S^{(2)}$-layer}
+    \label{alg-1}
+    \textbf{Input:} black-box function $F = S^{(2)}\circ A \circ S^{(1)}$ \\
+    \textbf{Output:} $\tilde S^{(2)}$ such that 
+    $(\tilde S^{(2)})^{-1} \circ F = \tilde A\circ S^{(1)}$
+    \begin{algorithmic}[1]
+    \For  $k=0$ to $k_2-1$ 
+    \State Choose 
+    \EndFor
+    % Step 1
+    \Step \State Randomly choose one of the subsets of $P*(V_i)$ to satisfy the following condition
+    \begin{center}
+        $I \overset{\$}{\leftarrow} P*(V_i)$ such that $\forall S \in I, |S| \le k $
+    \end{center}
+   
+    % Step 2
+    \Step \State Assign an integer $c_i$ to each set in $I$ as follows. At this time, the sum of the $c_i$ should be the message $m$ \NoNumber
+        \For {$i = 1$ to $|I|-1$} \NoNumber
+            \State {$c_i  \overset{\$}{\leftarrow} Z_p$} \NoNumber
+        \EndFor \NoNumber \\
+        $c_{|I|} = m - \sum_{i=1}^{|I|-1}c_i (mod p)$ \NoNumber
+       
+    % Step 3
+    \Step \State Form the following polynomial
+    \begin{center}
+        $f(X_{v1}, X_{v2}, ... ) = \sum_{i=1}^{|I|-1}c_i \prod_{u \in I_i} \sum_{u \in N_{[u]}} x_u$
+    \end{center}
+   
+    % Step 4
+    \Step \State Expand polynomial $f$, then replace all higher powers of a variable by its first power and delete a term consisting of a product of variables corresponding to a vertices with a distance equal to or less than 2
+   
+    % Step 5
+    \Step \State $f$ is an invariant polynomial in which the variable in the polynomial corresponds to the vertex of $G$ and the highest degree is k, denoted as $f_{G}^{k}$
+   
+    % Step 6
+    \Step \State return $f_{G}^{k}$
+    \end{algorithmic}
+\end{breakablealgorithm}
 
 \section{Cryptanalysis of Shi's Algorithm}
+
+
+
+
 
 \begin{itemize}
 \item round inversion
