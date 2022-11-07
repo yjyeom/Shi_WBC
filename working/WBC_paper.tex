@@ -558,45 +558,69 @@ Applying input as $(P, C, C,\ldots, C)$, we expect the same result.
 Thus we can make as many input multisets as we wish 
 by choosing constant parts arbitrarily.
 Thus it is easy to collect $2^{m_2}-m_2-1$ lineary independent equations.
+Algorithm \ref{alg-1} provides a way to make $S^{(2)}\circ A \circ S^{(1)}$ to
+$\tilde A \circ S^{(1)}$.
 
 \begin{breakablealgorithm}
     \setstretch{1.2}
-    \caption{Removing $S^{(2)}$-layer}
+    \caption{Recovering $S^{(2)}$-layer}
     \label{alg-1}
-    \textbf{Input:} black-box function $F = S^{(2)}\circ A \circ S^{(1)}$ \\
+    \textbf{Input:} $F = S^{(2)}\circ A \circ S^{(1)}$ as a black-box function \\
     \textbf{Output:} $\tilde S^{(2)}$ such that 
     $(\tilde S^{(2)})^{-1} \circ F = \tilde A\circ S^{(1)}$
     \begin{algorithmic}[1]
-    \For  $k=0$ to $k_2-1$ 
-    \State Choose 
+    \For  {$k=0$ to $k_2-1$}
+    \State Assign variables $z_j :=(s_k^{(2)})^{-1}(j)$ for $0\le j<k_2$.
+    \State $A \leftarrow \phi$ \Comment{$A$: Set of equations}
+    \While {$n < 2^{m_2} - m_2 -1$}
+    \State Choose a multiset with property $(D,\ldots, D)$ as
+     \begin{flushright}\footnotesize
+	$\{ X_i:=(x_{0,i}, \ldots, x_{k_1-1,i}) :  i=0,1,\ldots, 2^{m_1}-1 \}.$
+	\end{flushright}
+    \State Store the corresponding output as $Y_i = F(X_i)$
+     \begin{flushright}\footnotesize
+	$\{ Y_i:=(y_{0,i}, \ldots, y_{k_1-1,i}) :  i=0,1,\ldots, 2^{m_1}-1 \}.$
+	\end{flushright}
+    \State Construct an equation $(eq)$ as
+     $$(eq): \ \bigoplus_{i=0}^{2^{m_1}-1} (s_k^{(2)})^{-1}(y_{k,i}) = 0$$
+    \State \If {$(eq)$ is linearly independent of $A$} 
+		\State {Add the equation $(eq)$ to $A$}
+    \EndIf
+    \EndWhile
+    \State Solve the system of linear equations in $A$:
+    \begin{center} 
+      Determine $z_j$ by Gaussian elimination.
+    \end{center}
+    \State Define $\tilde s_k^{(2)}(z_j) = j$.
     \EndFor
-    % Step 1
-    \Step \State Randomly choose one of the subsets of $P*(V_i)$ to satisfy the following condition
-    \begin{center}
-        $I \overset{\$}{\leftarrow} P*(V_i)$ such that $\forall S \in I, |S| \le k $
-    \end{center}
-   
-    % Step 2
-    \Step \State Assign an integer $c_i$ to each set in $I$ as follows. At this time, the sum of the $c_i$ should be the message $m$ \NoNumber
-        \For {$i = 1$ to $|I|-1$} \NoNumber
-            \State {$c_i  \overset{\$}{\leftarrow} Z_p$} \NoNumber
-        \EndFor \NoNumber \\
-        $c_{|I|} = m - \sum_{i=1}^{|I|-1}c_i (mod p)$ \NoNumber
-       
-    % Step 3
-    \Step \State Form the following polynomial
-    \begin{center}
-        $f(X_{v1}, X_{v2}, ... ) = \sum_{i=1}^{|I|-1}c_i \prod_{u \in I_i} \sum_{u \in N_{[u]}} x_u$
-    \end{center}
-   
-    % Step 4
-    \Step \State Expand polynomial $f$, then replace all higher powers of a variable by its first power and delete a term consisting of a product of variables corresponding to a vertices with a distance equal to or less than 2
-   
-    % Step 5
-    \Step \State $f$ is an invariant polynomial in which the variable in the polynomial corresponds to the vertex of $G$ and the highest degree is k, denoted as $f_{G}^{k}$
-   
-    % Step 6
-    \Step \State return $f_{G}^{k}$
+    \State \Return $\tilde S^{(2)} \leftarrow \tilde s_0^{(2)} \| \cdots \| \tilde s_{k_2-1}^{(2)}$. 
+    \end{algorithmic}
+\end{breakablealgorithm}
+
+Now  we 
+
+\begin{breakablealgorithm}
+    \setstretch{1.2}
+    \caption{Recovering $A$-layer}
+    \label{alg-2}
+    \textbf{Input:} $\tilde F := \tilde A \circ S^{(1)}$ as a black-box function \\
+    \textbf{Output:} $\tilde A$ such that 
+    $(\tilde A)^{-1} \circ \tilde F =\tilde S^{(1)}$
+    \begin{algorithmic}[1]
+   \State Let $U_{in}$ be a set of all possible input differences for an $m_1$-bit function.
+    \For  {$k=0$ to $k_1-1$}
+    \State $\Delta_{in} \leftarrow \phi$
+    \State $\Delta_{out} \leftarrow \phi$
+    \Repeat
+    \State Select $d_{in} \leftarrow U_{in}$ randomly.
+    \State $D_{in}    \leftarrow (0,\ldots, d_{in}, \ldots, 0)$
+   \If {$\dim(\tilde F(\Delta_{in})) < \dim(\tilde F(\Delta_{in})\cup \{D_{in}\})$}
+    \State $\Delta_{in} \leftarrow \Delta_{in} \cup \{ D_{in} \}$
+    \State $\Delta_{out} \leftarrow \tilde F(\Delta_{in})$
+   \EndIf
+\Until {$\dim(\Delta_{out}) = m_1$}
+   \EndFor
+    \State \Return $\tilde S^{(2)} \leftarrow \tilde s_0^{(2)} \| \cdots \| \tilde s_{k_2-1}^{(2)}$. 
     \end{algorithmic}
 \end{breakablealgorithm}
 
