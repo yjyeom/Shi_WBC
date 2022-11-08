@@ -7,6 +7,7 @@
 
 \usepackage{thmtools}
 \declaretheorem[numberwithin=section]{theorem}
+\newcommand{\rank}{\mathop{\mathrm{rank}}}
 
 
 
@@ -606,7 +607,7 @@ Now  we
     \textbf{Input:} $\tilde F := \tilde A \circ S^{(1)}$ as a black-box function \\
     \textbf{Output:} $\tilde A$ such that 
     $(\tilde A)^{-1} \circ \tilde F =\tilde S^{(1)}$
-    \begin{algorithmic}[1]
+    \begin{algorithmic}[1]  
    \State Let $U_{in}$ be a set of all possible input differences for an $m_1$-bit function.
     \For  {$k=0$ to $k_1-1$}
     \State $\Delta_{in} \leftarrow \phi$
@@ -614,11 +615,12 @@ Now  we
     \Repeat
     \State Select $d_{in} \leftarrow U_{in}$ randomly.
     \State $D_{in}    \leftarrow (0,\ldots, d_{in}, \ldots, 0)$
-   \If {$\dim(\tilde F(\Delta_{in})) < \dim(\tilde F(\Delta_{in})\cup \{D_{in}\})$}
+   \If {$\rank\tilde F(\Delta_{in}) < \rank\tilde F(\Delta_{in}\cup \{D_{in}\})$}
     \State $\Delta_{in} \leftarrow \Delta_{in} \cup \{ D_{in} \}$
     \State $\Delta_{out} \leftarrow \tilde F(\Delta_{in})$
    \EndIf
-\Until {$\dim(\Delta_{out}) = m_1$}
+\Until {$\rank(\Delta_{out}) = m_1$}
+   \State Select a basis from $\Delta_{out}$
    \EndFor
     \State \Return $\tilde S^{(2)} \leftarrow \tilde s_0^{(2)} \| \cdots \| \tilde s_{k_2-1}^{(2)}$. 
     \end{algorithmic}
