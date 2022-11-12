@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.25)  8 NOV 2022 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.1)  12 NOV 2022 23:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -299,6 +299,7 @@ Package: thm-listof 2020/08/01 v0.72
 Package: thm-restate 2020/08/01 v0.72
 ))
 \c@theorem=\count284
+\c@lemma=\count285
 
 (c:/texlive/2022/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -310,15 +311,15 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count285
-\c@ALG@rem=\count286
-\c@ALG@nested=\count287
+\c@ALG@line=\count286
+\c@ALG@rem=\count287
+\c@ALG@nested=\count288
 \ALG@tlm=\skip56
 \ALG@thistlm=\skip57
-\c@ALG@Lnr=\count288
-\c@ALG@blocknr=\count289
-\c@ALG@storecount=\count290
-\c@ALG@tmpcounter=\count291
+\c@ALG@Lnr=\count289
+\c@ALG@blocknr=\count290
+\c@ALG@storecount=\count291
+\c@ALG@tmpcounter=\count292
 \ALG@tmplength=\skip58
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -328,35 +329,35 @@ nment
 
 (c:/texlive/2022/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count292
+\c@float@type=\count293
 \float@exts=\toks27
 \float@box=\box58
 \@float@everytoks=\toks28
 \@floatcapt=\box59
 )
 \@float@every@algorithm=\toks29
-\c@algorithm=\count293
+\c@algorithm=\count294
 )
 (c:/texlive/2022/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2022/02/07 v1.28a mathematical typesetting tools
 
 (c:/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count294
-\calc@Bcount=\count295
+\calc@Acount=\count295
+\calc@Bcount=\count296
 \calc@Adimen=\dimen176
 \calc@Bdimen=\dimen177
 \calc@Askip=\skip59
 \calc@Bskip=\skip60
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count296
+\calc@Ccount=\count297
 \calc@Cskip=\skip61
 )
 (c:/texlive/2022/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count297
+\g_MT_multlinerow_int=\count298
 \l_MT_multwidth_dim=\dimen178
 \origjot=\skip62
 \l_MT_shortvdotswithinadjustabove_dim=\dimen179
@@ -373,7 +374,7 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count298
+\l__color_backend_stack_int=\count299
 \l__pdf_internal_box=\box61
 )
 (./WBC_paper.aux
@@ -386,43 +387,43 @@ LaTeX Warning: Label `tab1' multiply defined.
 )
 \openout1 = `WBC_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
 
 -- Lines per column: 56 (exact).
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 56
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 57
 .
 (c:/texlive/2022/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 
 LaTeX Font Warning: Font shape `T1/ptm/n/n' undefined
-(Font)              using `T1/ptm/m/n' instead on input line 56.
+(Font)              using `T1/ptm/m/n' instead on input line 57.
 
 (c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count299
+\scratchcounter=\count300
 \scratchdimen=\dimen186
 \scratchbox=\box62
-\nofMPsegments=\count300
-\nofMParguments=\count301
+\nofMPsegments=\count301
+\nofMParguments=\count302
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count302
+\MPscratchCnt=\count303
 \MPscratchDim=\dimen187
-\MPnumerator=\count303
-\makeMPintoPDFobject=\count304
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
 \everyMPtoPDFconversion=\toks31
 ) (c:/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -436,9 +437,9 @@ e
 <bullet.png, id=3, 12.045pt x 35.38219pt>
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 82.
+Package pdftex.def Info: bullet.png  used on input line 84.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 82
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 84
 .
 
 (c:/texlive/2022/texmf-dist/tex/latex/psnfss/t1phv.fd
@@ -446,14 +447,14 @@ File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 
 LaTeX Font Warning: Font shape `T1/phv/n/n' undefined
-(Font)              using `T1/phv/m/n' instead on input line 82.
+(Font)              using `T1/phv/m/n' instead on input line 84.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
 
 (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
 
 
 (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -461,13 +462,33 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 95.
+Package pdftex.def Info: bullet.png  used on input line 97.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
-<notaglinelogo.png, id=4, 169.38281pt x 42.91031pt>
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 101.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+LaTeX Font Info:    Calculating math sizes for size <9.9> on input line 103.
+LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 103.
+
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 103--103
+[]  
+ []
+
+
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 103--103
+[]  
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<logo.png, id=4, 206.27063pt x 53.44969pt>
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 120.
+(pdftex.def)             Requested size: 91.32pt x 23.66309pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
 []
@@ -486,32 +507,31 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [1
 
 
- <./notaglinelogo.png>]
-LaTeX Font Info:    Calculating math sizes for size <9.9> on input line 101.
-LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 101.
-
-Overfull \hbox (9.2679pt too wide) in paragraph at lines 101--101
-[]  
+ <./logo.png> <./bullet.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+[]\T1/ptm/n/n/10 Chow
  []
 
 
-Overfull \hbox (9.2679pt too wide) in paragraph at lines 101--101
-[]  
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+[]\T1/ptm/n/n/10 Billet
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-<logo.png, id=13, 206.27063pt x 53.44969pt>
-File: logo.png Graphic file (type png)
-<use logo.png>
-Package pdftex.def Info: logo.png  used on input line 118.
-(pdftex.def)             Requested size: 91.32pt x 23.66309pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[][]
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
+[]\T1/ptm/n/n/10 Chow
  []
 
+
+Underfull \hbox (badness 2547) in paragraph at lines 143--143
+[]\T1/ptm/n/n/10 White-box AES with large
+ []
+
+<notaglinelogo.png, id=20, 169.38281pt x 42.91031pt>
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 152.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
 []
@@ -527,31 +547,19 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[2
-
- <./logo.png> <./bullet.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 138--138
-[]\T1/ptm/n/n/10 Chow
+[2 <./notaglinelogo.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+[]\T1/ptm/n/n/10 Analytic Tools for White-box
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
-[]\T1/ptm/n/n/10 Billet
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--139
-[]\T1/ptm/n/n/10 Chow
- []
-
-
-Underfull \hbox (badness 2547) in paragraph at lines 141--141
-[]\T1/ptm/n/n/10 White-box AES with large
+Underfull \hbox (badness 2142) in paragraph at lines 179--180
+[]\T1/ptm/n/n/10 C.H. Baek et
  []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 150.
+Package pdftex.def Info: notaglinelogo.png  used on input line 249.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -569,18 +577,13 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
-[]\T1/ptm/n/n/10 Analytic Tools for White-box
- []
-
-
-Underfull \hbox (badness 2142) in paragraph at lines 177--178
-[]\T1/ptm/n/n/10 C.H. Baek et
+Overfull \hbox (0.79895pt too wide) detected at line 358
+\OML/cmm/m/it/10 h[] [] :
  []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 247.
+Package pdftex.def Info: notaglinelogo.png  used on input line 383.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -598,13 +601,9 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [4]
-Overfull \hbox (0.79895pt too wide) detected at line 356
-\OML/cmm/m/it/10 h[] [] :
- []
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 381.
+Package pdftex.def Info: notaglinelogo.png  used on input line 522.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -622,9 +621,11 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 520.
+Package pdftex.def Info: notaglinelogo.png  used on input line 660.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -642,11 +643,27 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [6]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 1902) in paragraph at lines 662--666
+\T1/ptm/n/n/10 where $\OML/cmm/m/it/10 w[]$ \T1/ptm/n/n/10 are in-ter-preted as
+ col-umn vec-tors for $\OML/cmm/m/it/10 i \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 5533) in paragraph at lines 672--676
+\OML/cmm/m/it/10 m[]$ \T1/ptm/n/n/10 and ob-tain $\OML/cmm/m/it/10 m[]$ \T1/ptm
+/n/n/10 out-put dif-fer-ences in $\OT1/cmr/m/n/10 ^^A[] =
+ []
+
+
+Overfull \hbox (4.3911pt too wide) in paragraph at lines 691--696
+\T1/ptm/n/n/10 With $\OT1/cmr/m/n/10 ^^A[] = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10
+ w[]; w[]; [] ; w[]\OMS/cmsy/m/n/10 g$\T1/ptm/n/n/10 , let $\OML/cmm/m/it/10 ^^
+Ny[]; ^^Ny[]; [] ; ^^Ny[]$
+ []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 657.
+Package pdftex.def Info: notaglinelogo.png  used on input line 811.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -666,11 +683,11 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [7]
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 763.
+Package pdftex.def Info: bullet.png  used on input line 925.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 765.
+Package pdftex.def Info: notaglinelogo.png  used on input line 927.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -698,13 +715,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6204 strings out of 478268
- 103333 string characters out of 5850345
- 419223 words of memory out of 5000000
- 24270 multiletter control sequences out of 15000+600000
+ 6223 strings out of 478268
+ 103588 string characters out of 5850346
+ 419596 words of memory out of 5000000
+ 24289 multiletter control sequences out of 15000+600000
  567410 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,13n,76p,2301b,356s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,13n,76p,2301b,408s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2022/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1
@@ -728,7 +745,7 @@ uhvbo8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:
 texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2022/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on WBC_paper.pdf (8 pages, 304321 bytes).
+Output written on WBC_paper.pdf (8 pages, 312986 bytes).
 PDF statistics:
  162 PDF objects out of 1000 (max. 8388607)
  98 compressed objects within 1 object stream
